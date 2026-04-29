@@ -19,11 +19,11 @@ Four approaches are explored and compared:
 
 > Note: The undersampling model is trained on a heavily reduced dataset (matched to the minority class size) and evaluated on a different split, so its accuracy is not directly comparable to the other three models.
 
-**Kaggle leaderboard score: 95.9%** (XGBoost submission)
+**Kaggle leaderboard score: 95.9%** (XGBoost submission) **95.8%** (Random Forest without SMOTE submission)
 
 ## Key Techniques
 
-- `ColumnTransformer` preprocessing pipelines with `OneHotEncoder` and `StandardScaler`
+- `ColumnTransformer` preprocessing pipelines with `OneHotEncoder` and `StandardScaler` > Note: It may have been easier to evaluate this with `LabelEncoder` rather than `OneHotEncoder` due to the large number of labels.
 - Majority class undersampling as a naive baseline
 - `class_weight='balanced'` in Random Forest to penalise minority class misclassification
 - SMOTE oversampling via an `imblearn` pipeline
